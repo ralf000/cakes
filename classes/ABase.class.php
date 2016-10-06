@@ -1,6 +1,6 @@
 <?php
 
- abstract class Base {
+ abstract class ABase {
 
      static $db         = NULL;
      static $statements = [];

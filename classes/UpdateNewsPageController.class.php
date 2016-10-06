@@ -14,12 +14,12 @@
              $newsManager = new NewsManager();
              if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                  $data        = $this->dataHandler($req->getProperties());
-                 $newsManager->updateNews($data);
+                 $newsManager->update($data);
                  header('Location: news.php');
                  exit;
              } else {
                  $id   = filter_var($req->getProperty('id'), FILTER_SANITIZE_NUMBER_INT);
-                 $news = $newsManager->findNews($id);
+                 $news = $newsManager->find($id);
                  if (empty($news))
                      throw new Exception('Такой новости нет');
                  $req->setProperty('news', $news);

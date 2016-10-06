@@ -1,6 +1,6 @@
 <?php
 
- class NewsPageController extends PageController {
+ class AdminPageController extends PageController {
 
      public function process() {
          if (!isset($_SERVER['PHP_AUTH_USER'])) {
@@ -10,7 +10,7 @@
              echo 'Для управления новостями необходимо авторизоваться';
              exit;
          } else {
-             $newsManager = new NewsManager();
+             $newsManager = new AdminManager();
              $this->getRequest()->setProperty('news', $newsManager->findAll());
              $this->forward('views/admin/news.php');
          }

@@ -1,6 +1,6 @@
 <?php
  
-require_once '../classes/Base.class.php';
+require_once '../classes/ABase.class.php';
 require_once '../classes/Request.class.php';
 require_once '../classes/Registry.class.php';
 require_once '../classes/DB.class.php';
@@ -19,7 +19,7 @@ require_once '../classes/RequestRegistry.class.php';
 
  $newsManager = new NewsManager();
  $req         = RequestRegistry::getRequest();
- $result = $newsManager->findNews($id);
+ $result = $newsManager->find($id);
  $result['created_time'] = date('H:i:s d-m-Y', strtotime($result['created_time']));
  echo json_encode($result);
  

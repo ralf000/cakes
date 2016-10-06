@@ -14,11 +14,11 @@
                  $newsManager = new NewsManager();
                  $req         = RequestRegistry::getRequest();
                  $data        = $this->dataHandler($req->getProperties());
-                 $newsManager->addNews($data);
+                 $newsManager->add($data);
                  header('Location: news.php');
                  exit;
              } else {
-//                 $this->getRequest()->setProperty('news', $newsManager->findAllNews());
+//                 $this->getRequest()->setProperty('news', $newsManager->findAll());
                  $this->forward('views/admin/addnews.php');
              }
          }
