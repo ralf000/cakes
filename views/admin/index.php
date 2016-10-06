@@ -5,7 +5,7 @@
 ?>
 <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#news">Новости</a></li>
-    <li><a data-toggle="tab" href="#panel2">Мои работы</a></li>
+    <li><a data-toggle="tab" href="#works">Мои работы</a></li>
     <li><a data-toggle="tab" href="#panel3">Панель 3</a></li>
 </ul>
 
@@ -13,9 +13,8 @@
     <div id="news" class="tab-pane fade in active">
         <? (new NewsPageController())->process(); ?>
     </div>
-    <div id="panel2" class="tab-pane fade">
-        <h3>Мои работы</h3>
-        <p>Содержимое 2 панели...</p>
+    <div id="works" class="tab-pane fade">
+        <? (new WorksPageController())->process(); ?>
     </div>
     <div id="panel3" class="tab-pane fade">
         <h3>Панель 3</h3>
