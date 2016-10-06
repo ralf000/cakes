@@ -1,0 +1,4 @@
+<?php
+
+return ['private_key_for_filemanager'];
+
