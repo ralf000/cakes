@@ -1,6 +1,9 @@
 <?php
-
- class UpdateNewsPageController extends PageController {
+/**
+ * @property array $title
+ * @property array $news
+ */
+ class UpdateNewsPageController extends APageController {
 
      public function process() {
          if (!isset($_SERVER['PHP_AUTH_USER'])) {
@@ -22,8 +25,9 @@
                  $news = $newsManager->find($id);
                  if (empty($news))
                      throw new Exception('Такой новости нет');
-                 $req->setProperty('news', $news);
-                 $this->forward('views/admin/updatenews.php');
+                 $this->news = $news;
+                 $this->title = ['Новости', 'Обновление новости'];
+                 $this->forward(dirname(__DIR__) . '/views/admin/updatenews.php');
              }
          }
      }

@@ -26,6 +26,9 @@
          $this->values[$key] = $val;
      }
 
+     /**
+      * @return Request
+      */
      static function getRequest() {
          $inst = self::instance();
          if (is_null($inst->get('request'))) {

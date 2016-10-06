@@ -1,6 +1,8 @@
 <?php
-
- class AddNewsPageController extends PageController {
+/**
+ * @property array $title
+ */
+ class AddNewsPageController extends APageController {
 
      public function process() {
          if (!isset($_SERVER['PHP_AUTH_USER'])) {
@@ -18,8 +20,8 @@
                  header('Location: news.php');
                  exit;
              } else {
-//                 $this->getRequest()->setProperty('news', $newsManager->findAll());
-                 $this->forward('views/admin/addnews.php');
+                 $this->title = ['Новости', 'Добавление новости'];
+                 $this->forward(dirname(__DIR__) . '/views/admin/addnews.php');
              }
          }
      }

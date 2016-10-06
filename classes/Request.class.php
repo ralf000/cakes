@@ -3,6 +3,7 @@
  class Request {
 
      private $properties;
+     private $server;
      private $feedback = [];
 
 
@@ -11,6 +12,7 @@
      }
 
      function init() {
+         $this->server = $_SERVER;
          if (isset($_SERVER['REQUEST_METHOD'])) {
              $this->properties = $_REQUEST;
              return;
@@ -42,6 +44,16 @@
      function getProperties() {
          return $this->properties;
      }
+
+     /**
+      * @return mixed
+      */
+     public function getServer()
+     {
+         return $this->server;
+     }
+     
+     
 
  }
  

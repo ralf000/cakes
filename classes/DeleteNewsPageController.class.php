@@ -1,6 +1,6 @@
 <?php
 
- class DeleteNewsPageController extends PageController {
+ class DeleteNewsPageController extends APageController {
 
      public function process() {
          if (!isset($_SERVER['PHP_AUTH_USER'])) {

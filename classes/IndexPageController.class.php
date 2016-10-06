@@ -1,6 +1,6 @@
 <?php
 
- class IndexPageController extends PageController {
+ class IndexPageController extends APageController {
 
      public function process() {
          try {
