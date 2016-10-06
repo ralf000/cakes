@@ -37,6 +37,17 @@ abstract class APageController
         return $content;
     }
 
+    protected function auth()
+    {
+        if (RequestRegistry::getRequest()->getServer()['PHP_AUTH_USER']) {
+            header("Content-Type: text/html; charset=utf-8");
+            header('WWW-Authenticate: Basic realm="My Realm"');
+            header('HTTP/1.0 401 Unauthorized');
+            echo 'Для добавление новости необходимо авторизоваться';
+            exit;
+        }
+    }
+
     function __get($name)
     {
         return $this->data[$name] ?: null;
