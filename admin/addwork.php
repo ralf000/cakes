@@ -1,6 +1,8 @@
 <?php
 
-require_once dirname(__DIR__) . '/helpers/autoloader.php';
+use controllers\AddWorksPageController;
 
-$work = new AddWorkPageController();
+require_once dirname(__DIR__) . '/autoloader.php';
+
+$work = new AddWorksPageController();
 $work->process();

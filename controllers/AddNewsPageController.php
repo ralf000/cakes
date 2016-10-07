@@ -1,5 +1,10 @@
 <?php
 
+namespace controllers;
+use components\helpers\Helper;
+use components\request\RequestRegistry;
+use models\NewsManager;
+
 /**
  * @property array $title
  */

@@ -1,5 +1,7 @@
 <?php
 
+namespace controllers;
+
 /**
  * @property array $title
  */

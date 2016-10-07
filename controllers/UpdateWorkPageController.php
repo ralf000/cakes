@@ -1,10 +1,16 @@
 <?php
 
+namespace controllers;
+use components\helpers\Helper;
+use components\request\RequestRegistry;
+use Exception;
+use models\NewsManager;
+
 /**
  * @property array $title
  * @property array $news
  */
-class UpdateNewsPageController extends APageController
+class UpdateWorkPageController extends APageController
 {
 
     public function process()

@@ -1,5 +1,9 @@
 <?php
 
+namespace models;
+
+use components\helpers\Helper;
+
 class NewsManager extends AManager
 {
 

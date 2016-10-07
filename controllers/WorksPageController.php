@@ -1,5 +1,8 @@
 <?php
 
+namespace controllers;
+use models\WorksManager;
+
 /**
  * @property array $works
  * @property array $title
@@ -7,12 +10,12 @@
 class WorksPageController extends APageController
 {
 
-    public function process()
+    public function process($includedPage = false)
     {
         $this->auth();
         $myWorksManager = new WorksManager();
         $this->works = $myWorksManager->findAll();
         $this->title = ['Мои работы', 'Торты для страницы "Мои работы"'];
-        $this->forward(dirname(__DIR__) . '/views/admin/works.php');
+        $this->forward(dirname(__DIR__) . '/views/admin/works.php', $includedPage);
     }
 }

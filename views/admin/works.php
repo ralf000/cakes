@@ -3,7 +3,6 @@
  * @var $this APageController
  */
 ?>
-<?// Helper::g($this->works); exit;?>
 <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
     <div class="row">
         <div class="col-sm-12">
@@ -37,9 +36,9 @@
             <? else: ?>
                 <?= '<p>Тортов пока нет</p>' ?>
             <? endif; ?>
-<div class="pull-right">
-    <a class="btn btn-warning" href="addwork.php">Добавить торт</a>
-</div>
+            <div class="pull-right">
+                <a class="btn btn-warning" href="addwork.php">Добавить торт</a>
+            </div>
         </div>
     </div>
 </div>
@@ -56,6 +55,5 @@
         });
     });
 </script>
-<!--        --><? // $this->forward(__DIR__ . '/parts/footer.php')?>
 
 

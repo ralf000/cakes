@@ -5,7 +5,6 @@
  header('Expires: ' . date('r'));
 
  $name = filter_input(INPUT_GET, 'name', FILTER_SANITIZE_STRING);
-
  $email = filter_input(INPUT_GET, 'email', FILTER_SANITIZE_EMAIL);
  $message = filter_input(INPUT_GET, 'message', FILTER_SANITIZE_STRING);
 

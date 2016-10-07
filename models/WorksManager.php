@@ -1,5 +1,9 @@
 <?php
 
+namespace models;
+
+use controllers\ICRUD;
+
 class WorksManager implements ICRUD
 {
 
@@ -56,7 +60,8 @@ class WorksManager implements ICRUD
         // TODO: Implement delete() method.
     }
 
-    public function setWorksJson() {
+    public function setWorksJson()
+    {
         return file_put_contents(dirname(__DIR__) . '/js/cakes.json', $this->json);
     }
 

@@ -1,7 +1,8 @@
 <?
 /**
- * @var $this APageController
+ * @var $this controllers\APageController
  */
+
 ?>
 <?= $this->display(dirname(__DIR__) . '/parts/head.php') ?>
 <body class="hold-transition skin-blue sidebar-mini">

@@ -1,6 +1,8 @@
 <?php
 
-require_once dirname(__DIR__) . '/helpers/autoloader.php';
+use controllers\AdminPageController;
+
+require_once dirname(__DIR__) . '/autoloader.php';
 
 $news = new AdminPageController();
 $news->process();

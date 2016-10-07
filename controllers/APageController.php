@@ -1,5 +1,9 @@
 <?php
 
+namespace controllers;
+
+use components\request\RequestRegistry;
+
 abstract class APageController
 {
 
@@ -7,11 +11,14 @@ abstract class APageController
     protected $data = [];
     public $layout = 'admin.php';
 
+    const INCLUDED_PAGE = true;
+
     abstract function process();
 
-    function forward($resource)
+    function forward($resource, $includedPage = false)
     {
-        if ((strpos(RequestRegistry::getRequest()->getServer()['REQUEST_URI'], 'admin') === false)) {
+        if ((strpos(RequestRegistry::getRequest()->getServer()['REQUEST_URI'], 'admin') === false)
+            || $includedPage) {
             echo $this->display($resource);
         } else {
             $this->view = $resource;

@@ -1,5 +1,10 @@
 <?php
 
+namespace controllers;
+
+use Exception;
+use models\NewsManager;
+
 class IndexPageController extends APageController
 {
 

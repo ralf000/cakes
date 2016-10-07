@@ -1,6 +1,6 @@
 <?
 /**
- * @var $this APageController
+ * @var $this \controllers\APageController
  */
 ?>
 <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
@@ -40,9 +40,9 @@
             <? else: ?>
                 <?= '<p>Новостей пока нет</p>' ?>
             <? endif; ?>
-<div class="pull-right">
-    <a class="btn btn-warning" href="addnews.php">Добавить новость</a>
-</div>
+            <div class="pull-right">
+                <a class="btn btn-warning" href="addnews.php">Добавить новость</a>
+            </div>
         </div>
     </div>
 </div>
@@ -59,6 +59,5 @@
         });
     });
 </script>
-<!--        --><? // $this->forward(__DIR__ . '/parts/footer.php')?>
 
 

@@ -1,5 +1,8 @@
 <?php
 
+namespace controllers;
+use models\NewsManager;
+
 /**
  * Class NewsPageController
  * @property array $news
@@ -8,12 +11,12 @@
 class NewsPageController extends APageController
 {
 
-    public function process()
+    public function process($includedPage = false)
     {
         $this->auth();
         $newsManager = new NewsManager();
         $this->news = $newsManager->findAll();
         $this->title = ['Новости', 'Управление новостями'];
-        $this->forward(dirname(__DIR__) . '/views/admin/news.php');
+        $this->forward(dirname(__DIR__) . '/views/admin/news.php', $includedPage);
     }
 }

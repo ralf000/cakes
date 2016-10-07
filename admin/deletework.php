@@ -1,6 +1,8 @@
 <?php
 
-require_once dirname(__DIR__) . '/helpers/autoloader.php';
+use controllers\DeleteWorkPageController;
+
+require_once dirname(__DIR__) . '/autoloader.php';
 
 $work = new DeleteWorkPageController();
 $work->process();

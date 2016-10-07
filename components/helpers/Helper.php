@@ -1,5 +1,10 @@
 <?php
 
+namespace components\helpers;
+
+ use Reflection;
+ use ReflectionClass;
+
  class Helper {
 
      static function g($var) {

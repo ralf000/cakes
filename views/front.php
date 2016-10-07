@@ -1,4 +1,4 @@
-<? $news = RequestRegistry::getRequest()->getProperty('news'); ?>
+<? $news = \components\request\RequestRegistry::getRequest()->getProperty('news'); ?>
 <!DOCTYPE html>
 <html class="no-js">
     <head>

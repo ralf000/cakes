@@ -61,7 +61,7 @@
 <script src="https://cdn.ckeditor.com/4.4.3/standard/ckeditor.js"></script>
 <script>
     function addImage() {
-        ths = $('#image');
+        var ths = $('#image');
         if (ths.val().search(/(.jpe?g)|(.gif)|(.png)/i) != -1) {
             $('#files').remove();
             ths.closest('.form-group')

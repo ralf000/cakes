@@ -1,13 +1,10 @@
 <?php
- 
-require_once '../classes/ABase.class.php';
-require_once '../classes/Request.class.php';
-require_once '../classes/Registry.class.php';
-require_once '../classes/DB.class.php';
-require_once '../classes/NewsManager.class.php';
-require_once '../classes/RequestRegistry.class.php';
- 
 
+use components\request\RequestRegistry;
+use models\NewsManager;
+
+require_once dirname(__DIR__) . '/autoloader.php';
+ 
  header('Content-type: application/json; charset=utf-8');
  header('Cache-Control: no-store, no-cache');
  header('Expires: ' . date('r'));

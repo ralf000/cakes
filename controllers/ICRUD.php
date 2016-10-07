@@ -1,5 +1,7 @@
 <?php
 
+namespace controllers;
+
 interface ICRUD
 {
     public function add(array $values);
