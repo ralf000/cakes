@@ -1,7 +1,9 @@
 <?php
 
 namespace controllers;
+
 use components\helpers\Helper;
+use components\request\Request;
 use components\request\RequestRegistry;
 use Exception;
 use models\NewsManager;
@@ -18,11 +20,12 @@ class UpdateNewsPageController extends APageController
         $this->auth();
         $req = RequestRegistry::getRequest();
         $newsManager = new NewsManager();
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if (Request::isPost()) {
             $data = $this->dataHandler($req->getProperties());
             $newsManager->update($data);
             header('Location: news.php');
             exit;
+        } else {
             $id = filter_var($req->getProperty('id'), FILTER_SANITIZE_NUMBER_INT);
             $news = $newsManager->find($id);
             if (empty($news))
@@ -33,7 +36,8 @@ class UpdateNewsPageController extends APageController
         }
     }
 
-    private function dataHandler($data)
+    private
+    function dataHandler($data)
     {
         return $result = [
             'title' => filter_var($data['title'], FILTER_SANITIZE_STRING),

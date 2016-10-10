@@ -64,6 +64,11 @@ class Request
         return $this->server;
     }
 
+    public static function isPost() : bool
+    {
+        return $_SERVER['REQUEST_METHOD'] === 'POST' ? true : false;
+    }
+
 
 }
  

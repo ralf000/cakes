@@ -4,16 +4,27 @@ namespace models;
 
 use controllers\ICRUD;
 
+/**
+ * Class WorksManager
+ * @package models
+ */
 class WorksManager implements ICRUD
 {
 
-//    static $add = 'INSERT INTO news (title, description, image, body, created_time) VALUES (?, ?, ?, ?, NOW())';
-//    static $find = 'SELECT * FROM news WHERE id = ?';
-//    static $findAll = 'SELECT * FROM news ORDER BY created_time DESC';
-//    static $update = '';
-//    static $delete = 'DELETE FROM news WHERE id = ?';/**
+    public $id;
 
+    /**
+     * @var
+     */
     private $json;
+
+    /**
+     * WorksManager constructor.
+     */
+    public function __construct()
+    {
+        $this->json = $this->getJson();
+    }
 
 
     /**
@@ -22,7 +33,10 @@ class WorksManager implements ICRUD
      */
     public function add(array $values)
     {
-        // TODO: Implement add() method.
+        $work = new WorkContainer($values);
+        array_unshift($this->json, $work);
+        $this->setJson();
+        $this->getJson();
     }
 
     /**
@@ -31,16 +45,9 @@ class WorksManager implements ICRUD
      */
     public function find($id)
     {
-        // TODO: Implement find() method.
+        return $this->json[$id];
     }
 
-    /**
-     * @return mixed
-     */
-    public function findAll()
-    {
-        return json_decode(file_get_contents(dirname(__DIR__) . '/js/cakes.json'));
-    }
 
     /**
      * @param array $values
@@ -48,7 +55,10 @@ class WorksManager implements ICRUD
      */
     public function update(array $values)
     {
-        // TODO: Implement update() method.
+        $work = new WorkContainer($values);
+        $this->json[$this->id] = $work->getAsArray();
+        $this->setJson();
+        return true;
     }
 
     /**
@@ -57,12 +67,54 @@ class WorksManager implements ICRUD
      */
     public function delete($id)
     {
-        // TODO: Implement delete() method.
+        unset($this->json[$id]);
+        $this->setJson();
+        $this->getJson();
     }
 
-    public function setWorksJson()
+    /**
+     * @return mixed
+     */
+    public function findAll()
     {
-        return file_put_contents(dirname(__DIR__) . '/js/cakes.json', $this->json);
+        return $this->json;
+    }
+
+
+    private function getJson() : array
+    {
+        $this->json = json_decode(file_get_contents(dirname(__DIR__) . '/js/cakes.json'), true);
+        return $this->json;
+    }
+
+    /**
+     * @return int|bool
+     */
+    private function setJson()
+    {
+        return file_put_contents(dirname(__DIR__) . '/js/cakes.json', json_encode($this->json));
+    }
+
+    public function dataHandler($data)
+    {
+        if (isset($data['id']))
+            $this->id = $data['id'];
+        return $result = [
+            'title' => filter_var($data['title'], FILTER_SANITIZE_STRING),
+            'description' => filter_var($data['description'], FILTER_SANITIZE_STRING),
+            'large' => array_map(function ($el) {
+                return $this->filterImg($el);
+            }, $data['image']),
+            'thumbnail' => array_map(function ($el) {
+                return str_replace('img', 'img/thumbs', $this->filterImg($el));
+            }, $data['image']),
+        ];
+    }
+
+    private function filterImg(string $img)
+    {
+        $img = str_replace('http://' . $_SERVER['HTTP_HOST'], '', $img);
+        return filter_var($img, FILTER_SANITIZE_URL);
     }
 
 }

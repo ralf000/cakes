@@ -1,8 +1,8 @@
 <?php
 
-use controllers\AddWorksPageController;
+use controllers\AddWorkPageController;
 
 require_once dirname(__DIR__) . '/autoloader.php';
 
-$work = new AddWorksPageController();
+$work = new AddWorkPageController();
 $work->process();

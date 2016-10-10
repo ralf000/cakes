@@ -3,7 +3,7 @@
 namespace controllers;
 
 use components\request\RequestRegistry;
-use models\NewsManager;
+use models\WorksManager;
 
 class DeleteWorkPageController extends APageController
 {
@@ -12,10 +12,10 @@ class DeleteWorkPageController extends APageController
     {
         $this->auth();
         $req = RequestRegistry::getRequest();
-        $newsManager = new NewsManager();
+        $manager = new WorksManager();
         $id = filter_var($req->getProperty('id'), FILTER_SANITIZE_NUMBER_INT);
-        $newsManager->delete($id);
-        header('Location: news.php');
+        $manager->delete($id);
+        header('Location: /admin');
         exit;
     }
 

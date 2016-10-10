@@ -20,13 +20,13 @@
                     <tbody>
                     <? foreach ($this->works as $id => $w): ?>
                         <tr role="row">
-                            <td><?= $w->title ?></td>
-                            <td><?= $w->description ?></td>
-                            <td><img src="/<?= $w->thumbnail[0] ?>" width="150px" alt="<?= $w->title ?>"></td>
+                            <td><?= $w['title'] ?></td>
+                            <td><?= $w['description'] ?></td>
+                            <td><img src="/<?= trim($w['thumbnail'][0], '/') ?>" width="150px" alt="<?= $w->title ?>"></td>
                             <td style="text-align: center">
                                 <a href="updatework.php?id=<?= $id ?>"><span
                                         class="glyphicon glyphicon-pencil"></span></a>
-                                <a href="/admin/deletework.php?id=<?= $id ?>" class="delete"><span
+                                <a href="/admin/deletework.php?id=<?= $id ?>" class="deleteWork"><span
                                         class="glyphicon glyphicon-minus"></span></a>
                             </td>
                         </tr>
@@ -47,7 +47,7 @@
 <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript">
     $(function () {
-        $('.delete').on('click', function (e) {
+        $('.deleteWork').on('click', function (e) {
             if (!confirm('Вы уверены, что хотите удалить этот торт?'))
                 return false;
             else
