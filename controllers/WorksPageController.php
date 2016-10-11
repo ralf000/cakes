@@ -12,7 +12,6 @@ class WorksPageController extends APageController
 
     public function process($includedPage = false)
     {
-        $this->auth();
         $myWorksManager = new WorksManager();
         $this->works = $myWorksManager->findAll();
         $this->title = ['Мои работы', 'Торты для страницы "Мои работы"'];

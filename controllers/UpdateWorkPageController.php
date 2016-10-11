@@ -18,7 +18,6 @@ class UpdateWorkPageController extends APageController
 
     public function process()
     {
-        $this->auth();
         $req = RequestRegistry::getRequest();
         $manager = new WorksManager();
         if (Request::isPost()) {

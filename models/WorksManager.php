@@ -2,6 +2,7 @@
 
 namespace models;
 
+use components\helpers\Helper;
 use controllers\ICRUD;
 
 /**
@@ -68,6 +69,7 @@ class WorksManager implements ICRUD
     public function delete($id)
     {
         unset($this->json[$id]);
+        $this->json = $this->cleanAndResetArray($this->json);
         $this->setJson();
         $this->getJson();
     }
@@ -88,11 +90,12 @@ class WorksManager implements ICRUD
     }
 
     /**
+     * JSON_UNESCAPED_UNICODE - Не кодировать многобайтные символы Unicode
      * @return int|bool
      */
     private function setJson()
     {
-        return file_put_contents(dirname(__DIR__) . '/js/cakes.json', json_encode($this->json));
+        return file_put_contents(dirname(__DIR__) . '/js/cakes.json', json_encode($this->json, JSON_UNESCAPED_UNICODE));
     }
 
     public function dataHandler($data)
@@ -103,11 +106,11 @@ class WorksManager implements ICRUD
             'title' => filter_var($data['title'], FILTER_SANITIZE_STRING),
             'description' => filter_var($data['description'], FILTER_SANITIZE_STRING),
             'large' => array_map(function ($el) {
-                return $this->filterImg($el);
-            }, $data['image']),
+                    return $this->filterImg($el);
+            }, $this->cleanAndResetArray($data['image'])),
             'thumbnail' => array_map(function ($el) {
-                return str_replace('img', 'img/thumbs', $this->filterImg($el));
-            }, $data['image']),
+                    return str_replace('img', 'img/thumbs', $this->filterImg($el));
+            }, $this->cleanAndResetArray($data['image'])),
         ];
     }
 
@@ -115,6 +118,10 @@ class WorksManager implements ICRUD
     {
         $img = str_replace('http://' . $_SERVER['HTTP_HOST'], '', $img);
         return filter_var($img, FILTER_SANITIZE_URL);
+    }
+
+    private function cleanAndResetArray(array $array){
+        return array_values(array_diff($array, ['']));
     }
 
 }

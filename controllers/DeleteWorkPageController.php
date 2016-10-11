@@ -10,7 +10,6 @@ class DeleteWorkPageController extends APageController
 
     public function process()
     {
-        $this->auth();
         $req = RequestRegistry::getRequest();
         $manager = new WorksManager();
         $id = filter_var($req->getProperty('id'), FILTER_SANITIZE_NUMBER_INT);

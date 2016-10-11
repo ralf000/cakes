@@ -13,15 +13,15 @@ class NewsManager extends AManager
     static $update = '';
     static $delete = 'DELETE FROM news WHERE id = ?';
 
-    private function dataHandler($data)
+    public function dataHandler($data)
     {
         return $result = [
-            filter_var($data['title'], FILTER_SANITIZE_STRING),
-            filter_var($data['description'], FILTER_SANITIZE_STRING),
-            filter_var($data['image'], FILTER_SANITIZE_URL),
-            filter_var(Helper::validateHtml($data['body']))
+            'title' => filter_var($data['title'], FILTER_SANITIZE_STRING),
+            'description' => filter_var($data['description'], FILTER_SANITIZE_STRING),
+            'body' => filter_var(Helper::validateHtml($data['body'])),
+            'image' => filter_var($data['image'], FILTER_SANITIZE_URL),
+            'id' => filter_var($data['id'], FILTER_SANITIZE_NUMBER_INT)
         ];
-//         $data['created_time'] = date('Y-m-d H:i:s');
     }
 }
  

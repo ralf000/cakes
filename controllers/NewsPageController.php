@@ -13,7 +13,6 @@ class NewsPageController extends APageController
 
     public function process($includedPage = false)
     {
-        $this->auth();
         $newsManager = new NewsManager();
         $this->news = $newsManager->findAll();
         $this->title = ['Новости', 'Управление новостями'];

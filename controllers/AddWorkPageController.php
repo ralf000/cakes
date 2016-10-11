@@ -14,7 +14,6 @@ class AddWorkPageController extends APageController
 
     public function process()
     {
-        $this->auth();
         if (Request::isPost()) {
             $manager = new WorksManager();
             $data = $manager->dataHandler(RequestRegistry::getRequest()->getProperties());

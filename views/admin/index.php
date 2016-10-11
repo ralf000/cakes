@@ -3,12 +3,13 @@
  * @var $this \controllers\APageController
  */
 use controllers\NewsPageController;
+use controllers\SliderPageController;
 use controllers\WorksPageController;
 ?>
 <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#news">Новости</a></li>
     <li><a data-toggle="tab" href="#works">Мои работы</a></li>
-    <li><a data-toggle="tab" href="#panel3">Панель 3</a></li>
+    <li><a data-toggle="tab" href="#slider">Главный слайдер</a></li>
 </ul>
 
 <div class="tab-content">
@@ -20,9 +21,9 @@ use controllers\WorksPageController;
         <h1>Торты</h1>
         <? (new WorksPageController())->process(self::INCLUDED_PAGE); ?>
     </div>
-    <div id="panel3" class="tab-pane fade">
-        <h1>Панель 3</h1>
-        <p>Содержимое 3 панели...</p>
+    <div id="slider" class="tab-pane fade">
+        <h1>Главный слайдер</h1>
+        <? (new SliderPageController())->process(self::INCLUDED_PAGE); ?>
     </div>
     <div id="panel4" class="tab-pane fade">
         <h1>Панель 4</h1>

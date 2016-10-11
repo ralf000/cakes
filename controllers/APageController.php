@@ -13,8 +13,17 @@ abstract class APageController
 
     const INCLUDED_PAGE = true;
 
-    abstract function process();
+    /**
+     * APageController constructor.
+     */
+    public function __construct()
+    {
+        $this->auth();
+    }
 
+
+    abstract function process();
+    
     function forward($resource, $includedPage = false)
     {
         if ((strpos(RequestRegistry::getRequest()->getServer()['REQUEST_URI'], 'admin') === false)

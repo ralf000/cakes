@@ -21,7 +21,7 @@ use components\request\RequestRegistry;
             <label for="image">Изображение</label>
             <div class="input-group">
                 <span class="input-group-btn">
-                    <button type="button" class="btn btn-default flm" data-toggle="modal" data-target="#fileManager1">
+                    <button type="button" class="btn btn-default flm" data-toggle="modal" data-target="#fileManager<?= $key ?>">
                         <span class="glyphicon glyphicon-plus"></span>
                     </button>
                     <button type="button" class="btn btn-default minusImg">

@@ -1,3 +1,5 @@
+@import "bg-slides.css";
+
 .cb-slideshow{
     overflow: hidden;
 }
@@ -53,52 +55,6 @@
     padding: 0;
     line-height: 200px;
 	color: rgba(169,3,41, 0.8);
-}
-.cb-slideshow li:nth-child(1) span { background-image: url(/img/9/1.jpg) }
-.cb-slideshow li:nth-child(2) span {
-    background-image: url(/img/2/1.jpg);
-    -webkit-animation-delay: 6s;
-    -moz-animation-delay: 6s;
-    -o-animation-delay: 6s;
-    -ms-animation-delay: 6s;
-    animation-delay: 6s;
-}
-.cb-slideshow li:nth-child(3) span {
-    background-image: url(/img/5/1.jpg);
-    -webkit-animation-delay: 12s;
-    -moz-animation-delay: 12s;
-    -o-animation-delay: 12s;
-    -ms-animation-delay: 12s;
-    animation-delay: 12s;
-}
-.cb-slideshow li:nth-child(4) span {
-    background-image: url(/img/1/2.jpg);
-    -webkit-animation-delay: 18s;
-    -moz-animation-delay: 18s;
-    -o-animation-delay: 18s;
-    -ms-animation-delay: 18s;
-    animation-delay: 18s;
-}
-.cb-slideshow li:nth-child(2) div {
-    -webkit-animation-delay: 6s;
-    -moz-animation-delay: 6s;
-    -o-animation-delay: 6s;
-    -ms-animation-delay: 6s;
-    animation-delay: 6s;
-}
-.cb-slideshow li:nth-child(3) div {
-    -webkit-animation-delay: 12s;
-    -moz-animation-delay: 12s;
-    -o-animation-delay: 12s;
-    -ms-animation-delay: 12s;
-    animation-delay: 12s;
-}
-.cb-slideshow li:nth-child(4) div {
-    -webkit-animation-delay: 18s;
-    -moz-animation-delay: 18s;
-    -o-animation-delay: 18s;
-    -ms-animation-delay: 18s;
-    animation-delay: 18s;
 }
 
 /* Animation for the slideshow images */

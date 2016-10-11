@@ -17,11 +17,10 @@ class UpdateNewsPageController extends APageController
 
     public function process()
     {
-        $this->auth();
         $req = RequestRegistry::getRequest();
         $newsManager = new NewsManager();
         if (Request::isPost()) {
-            $data = $this->dataHandler($req->getProperties());
+            $data = $newsManager->dataHandler($req->getProperties());
             $newsManager->update($data);
             header('Location: news.php');
             exit;
@@ -34,18 +33,6 @@ class UpdateNewsPageController extends APageController
             $this->title = ['Новости', 'Обновление новости'];
             $this->forward(dirname(__DIR__) . '/views/admin/updatenews.php');
         }
-    }
-
-    private
-    function dataHandler($data)
-    {
-        return $result = [
-            'title' => filter_var($data['title'], FILTER_SANITIZE_STRING),
-            'description' => filter_var($data['description'], FILTER_SANITIZE_STRING),
-            'body' => filter_var(Helper::validateHtml($data['body'])),
-            'image' => filter_var($data['image'], FILTER_SANITIZE_URL),
-            'id' => filter_var($data['id'], FILTER_SANITIZE_NUMBER_INT)
-        ];
     }
 
 }

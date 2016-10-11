@@ -15,6 +15,7 @@ class WorkContainer
     public $description = '';
     public $thumbnail = [];
     public $large = [];
+    public $button_list = [];
     public $tags = [];
 
 
@@ -24,14 +25,22 @@ class WorkContainer
         $this->description = $data['description'];
         $this->thumbnail = $data['thumbnail'];
         $this->large = $data['large'];
+        $this->button_list = [
+            [
+                "title" => "Хочу такой!",
+                "url" => "#5"
+            ]
+        ];
     }
 
-    public function getAsArray(){
+    public function getAsArray()
+    {
         return [
             'title' => $this->title,
             'description' => $this->description,
             'thumbnail' => $this->thumbnail,
             'large' => $this->large,
+            'button_list' => $this->button_list,
             'tags' => $this->tags
         ];
     }

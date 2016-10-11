@@ -3,17 +3,18 @@
 namespace controllers;
 
 use components\request\RequestRegistry;
-use models\NewsManager;
+use models\SliderManager;
+use models\WorksManager;
 
-class DeleteNewsPageController extends APageController
+class DeleteSlidePageController extends APageController
 {
 
     public function process()
     {
         $req = RequestRegistry::getRequest();
-        $newsManager = new NewsManager();
+        $manager = new SliderManager();
         $id = filter_var($req->getProperty('id'), FILTER_SANITIZE_NUMBER_INT);
-        $newsManager->delete($id);
+        $manager->delete($id);
         header('Location: /admin');
         exit;
     }

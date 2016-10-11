@@ -13,7 +13,6 @@ class AddNewsPageController extends APageController
 
     public function process()
     {
-        $this->auth();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $newsManager = new NewsManager();
             $req = RequestRegistry::getRequest();
