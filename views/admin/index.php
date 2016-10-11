@@ -31,3 +31,4 @@ use controllers\WorksPageController;
     </div>
 </div>
 <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+<script src="/js/admin/index.js"></script>
