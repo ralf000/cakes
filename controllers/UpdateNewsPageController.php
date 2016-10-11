@@ -22,7 +22,7 @@ class UpdateNewsPageController extends APageController
         if (Request::isPost()) {
             $data = $newsManager->dataHandler($req->getProperties());
             $newsManager->update($data);
-            header('Location: admin/#news');
+            header('Location: /admin/#news');
             exit;
         } else {
             $id = filter_var($req->getProperty('id'), FILTER_SANITIZE_NUMBER_INT);

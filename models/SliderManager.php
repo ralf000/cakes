@@ -147,6 +147,10 @@ class SliderManager implements ICRUD
         return false;
     }
 
+    public function count(){
+        return count($this->slides);
+    }
+
 
     /**
      * @return array
@@ -175,6 +179,18 @@ class SliderManager implements ICRUD
         if (isset($img['id']))
             $arr['id'] = $img['id'];
         return $arr;
+    }
+
+    public static function slideShowGenerator(){
+        $slider = new self();
+        $output = '';
+        foreach (range(1, $slider->count()) as $key => $slide){
+            $num = $key + 1;
+            if (strlen($num) == 1)
+                $num = 0 . $num;
+            $output .= "<li><span>Image {$num}</span></li>\n\r";
+        }
+        return $output;
     }
 
 

@@ -1,3 +1,128 @@
+// =========my
+
+function fieldChecker(field, flag, msg) {
+    if (flag) {
+        field.closest('div').addClass('has-error has-feedback');
+        field.prev('label').text(msg);
+        field.after('<span class="glyphicon glyphicon-remove form-control-feedback"></span>');
+        return false;
+    } else {
+        field.closest('div').removeClass('has-error has-feedback');
+        field.prev('label').text();
+        field.closest('div').find('span').remove();
+    }
+    return true;
+}
+
+function moveToFeedBack(t, e) {
+    if ($(window).width() > 1000) {
+        e.preventDefault();
+        t.moveTo(6);
+    } else {
+        setTimeout(function () {
+            history.pushState('', document.title, window.location.pathname);
+        }, 200);
+    }
+}
+
+
+$(function () {
+    $('a#down').on('click', function (e) {
+        e.preventDefault();
+        $(this).moveTo(2);
+    });
+
+
+    $('#og-grid a').on('click', function (e) {
+        setTimeout(function () {
+            $('a.link-button').on('click', function (e) {
+                moveToFeedBack($(this), e);
+            });
+        }, 500);
+    });
+    $('.feedback').on('click', function (e) {
+        moveToFeedBack($(this), e);
+    });
+    $('.viewnews').on('click', function () {
+        var url = 'helpers/getNews.ajax.php';
+        var id = Number($(this).attr('href'));
+        $.getJSON(url, {id: id}, function (data, status, jqXHR) {
+            if (status === 'success') {
+                $('#viewtitle').text(data.title);
+                var body = $('#viewbody');
+                var date = body.children('#date');
+                var image = body.children('#viewimage');
+                var content = body.children('#viewcontent');
+                date.empty();
+                image.empty();
+                content.empty();
+                body.children('#date').append('<small>Добавлено: ' + data.created_time + '</small>');
+                (data.image.length > 0) ? body.children('#viewimage').append('<a class="fancybox" href="' + data.image + '"><img src="' + data.image + '" alt="' + data.title + '" style="max-height: 350px" class="img-responsive"/></a>') : false;
+                //(data.description.length > 0) ? body.children('#viewcontent').append('<p>' + data.description + '</p>') : false;
+                body.children('#viewcontent').append(data.body);
+            }
+        });
+    });
+    $('#mail').on('click', function (e) {
+        e.preventDefault();
+        var url = 'helpers/sendMail.ajax.php';
+        var name, email, message, flag, flag2;
+        name = $('input[name=name]');
+        email = $('input[name=email]');
+        message = $('textarea#message');
+        flag = fieldChecker(name, name.val().length === 0, 'Имя обязательно!');
+        flag2 = fieldChecker(email, email.val().length === 0, 'Email обязателен!');
+        flag3 = fieldChecker(message, message.val().length === 0, 'Сообщение обязательно!');
+        if (!(flag && flag2 && flag3))
+            return false;
+        $.getJSON(url, {name: name.val(), email: email.val(), message: message.val()}, function (data, status, jqXHR) {
+            if (status === 'success') {
+                $('#feedback').empty();
+                $('#feedback').append('<p class="bg-success">Ваше сообщение отправлено. Я отвечу вам в ближайшее время.)</p>');
+                name.val('');
+                email.val('');
+                message.val('');
+            }
+        });
+    });
+
+    $('.bxslider').bxSlider();
+    $('.fancybox').fancybox();
+    if ($(window).width() < 1000) {
+        $('ul.cb-slideshow').empty();
+    }
+});
+
+<!-- Yandex.Metrika counter -->
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter37964860 = new Ya.Metrika({
+                id:37964860,
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true
+            });
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+
+// //===============my
+
+
+
+
 $(function () {
 
     onepage();

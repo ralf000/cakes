@@ -2,6 +2,7 @@
 
 namespace components\helpers;
 
+ use models\SliderManager;
  use Reflection;
  use ReflectionClass;
 

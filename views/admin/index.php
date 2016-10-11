@@ -3,6 +3,7 @@
  * @var $this \controllers\APageController
  */
 use controllers\NewsPageController;
+use controllers\ReviewsPageController;
 use controllers\SliderPageController;
 use controllers\WorksPageController;
 ?>
@@ -10,6 +11,7 @@ use controllers\WorksPageController;
     <li class="active"><a data-toggle="tab" href="#news">Новости</a></li>
     <li><a data-toggle="tab" href="#works">Мои работы</a></li>
     <li><a data-toggle="tab" href="#slider">Главный слайдер</a></li>
+    <li><a data-toggle="tab" href="#reviews">Отзывы</a></li>
 </ul>
 
 <div class="tab-content">
@@ -25,9 +27,9 @@ use controllers\WorksPageController;
         <h1>Главный слайдер</h1>
         <? (new SliderPageController())->process(self::INCLUDED_PAGE); ?>
     </div>
-    <div id="panel4" class="tab-pane fade">
-        <h1>Панель 4</h1>
-        <p>Содержимое 4 панели...</p>
+    <div id="reviews" class="tab-pane fade">
+        <h1>Отзывы</h1>
+        <? (new ReviewsPageController())->process(self::INCLUDED_PAGE); ?>
     </div>
 </div>
 <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>

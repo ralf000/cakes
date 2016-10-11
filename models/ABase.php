@@ -27,6 +27,8 @@ abstract class ABase
 
     function doStatement($statement, array $values = [])
     {
+//        var_dump($statement);
+//        var_dump($values); exit;
         $sth = $this->prepareStatement($statement);
         $sth->closeCursor();
         $sth->execute($values);

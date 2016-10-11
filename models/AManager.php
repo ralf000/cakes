@@ -25,8 +25,8 @@ class AManager extends ABase implements ICRUD
 
     public function update(array $values)
     {
-        $updateQuery = $this->updateQuery(array_keys($values));
-        return $this->doStatement($updateQuery, $this->getValsFromArray($values));
+//        $updateQuery = $this->updateQuery(array_keys($values));
+        return $this->doStatement(static::$update, array_values($values));
     }
 
     function delete($id)
@@ -45,13 +45,13 @@ class AManager extends ABase implements ICRUD
         static::$update = $str;
         return static::$update;
     }
-
-    private function getValsFromArray(array $array)
-    {
-        $result = [];
-        foreach ($array as $a) {
-            $result[] = $a;
-        }
-        return $result;
-    }
+//
+//    private function getValsFromArray(array $array)
+//    {
+//        $result = [];
+//        foreach ($array as $a) {
+//            $result[] = $a;
+//        }
+//        return $result;
+//    }
 }
