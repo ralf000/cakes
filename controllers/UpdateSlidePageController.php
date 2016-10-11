@@ -24,7 +24,7 @@ class UpdateSlidePageController extends APageController
         if (Request::isPost()) {
             $data = $manager->imgHandler($req->getProperties());
             $manager->update($data);
-            header('Location: /admin');
+            header('Location: /admin/#slider');
             exit;
         } else {
             $id = filter_var($req->getProperty('id'), FILTER_SANITIZE_NUMBER_INT);

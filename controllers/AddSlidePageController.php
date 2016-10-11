@@ -19,7 +19,7 @@ class AddSlidePageController extends APageController
             $manager = new SliderManager();
             $img = $manager->imgHandler(RequestRegistry::getRequest()->getProperties());
             $manager->add($img);
-            header('Location: /admin');
+            header('Location: /admin/#slider');
             exit;
         }
         $this->title = ['Главный слайдер', 'Добавление слайда'];

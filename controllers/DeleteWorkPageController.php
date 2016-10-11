@@ -14,7 +14,7 @@ class DeleteWorkPageController extends APageController
         $manager = new WorksManager();
         $id = filter_var($req->getProperty('id'), FILTER_SANITIZE_NUMBER_INT);
         $manager->delete($id);
-        header('Location: /admin');
+        header('Location: /admin/#work');
         exit;
     }
 

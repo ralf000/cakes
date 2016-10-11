@@ -15,7 +15,7 @@ class DeleteSlidePageController extends APageController
         $manager = new SliderManager();
         $id = filter_var($req->getProperty('id'), FILTER_SANITIZE_NUMBER_INT);
         $manager->delete($id);
-        header('Location: /admin');
+        header('Location: /admin/#slider');
         exit;
     }
 

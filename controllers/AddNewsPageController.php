@@ -18,7 +18,7 @@ class AddNewsPageController extends APageController
             $req = RequestRegistry::getRequest();
             $data = $this->dataHandler($req->getProperties());
             $newsManager->add($data);
-            header('Location: news.php');
+            header('Location: /admin/#news');
             exit;
         } else {
             $this->title = ['Новости', 'Добавление новости'];

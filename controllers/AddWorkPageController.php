@@ -18,7 +18,7 @@ class AddWorkPageController extends APageController
             $manager = new WorksManager();
             $data = $manager->dataHandler(RequestRegistry::getRequest()->getProperties());
             $manager->add($data);
-            header('Location: /admin');
+            header('Location: /admin/#work');
             exit;
         }
         $this->title = ['Мои работы', 'Добавление торта'];

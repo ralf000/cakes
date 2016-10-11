@@ -23,7 +23,7 @@ class UpdateWorkPageController extends APageController
         if (Request::isPost()) {
             $data = $manager->dataHandler($req->getProperties());
             if ($manager->update($data)) {
-                header('Location: /admin');
+                header('Location: /admin/#work');
                 exit;
             }
         } else {
