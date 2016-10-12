@@ -3,6 +3,7 @@
  * @var $this \controllers\APageController
  */
 use controllers\AboutMePageController;
+use controllers\ContactsPageController;
 use controllers\NewsPageController;
 use controllers\ReviewsPageController;
 use controllers\SliderPageController;
@@ -14,6 +15,7 @@ use controllers\WorksPageController;
     <li><a data-toggle="tab" href="#slider">Главный слайдер</a></li>
     <li><a data-toggle="tab" href="#reviews">Отзывы</a></li>
     <li><a data-toggle="tab" href="#aboutme">Обо мне</a></li>
+    <li><a data-toggle="tab" href="#contacts">Контакты</a></li>
 </ul>
 
 <div class="tab-content">
@@ -36,6 +38,10 @@ use controllers\WorksPageController;
     <div id="aboutme" class="tab-pane fade">
         <h1>Обо мне</h1>
         <? (new AboutMePageController())->process(self::INCLUDED_PAGE); ?>
+    </div>
+    <div id="contacts" class="tab-pane fade">
+        <h1>Обо мне</h1>
+        <? (new ContactsPageController())->process(self::INCLUDED_PAGE); ?>
     </div>
 </div>
 <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
