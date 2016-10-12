@@ -18,6 +18,11 @@ use models\ReviewsManager;
 class IndexPageController extends APageController
 {
 
+    public function __construct()
+    {
+        return true;
+    }
+
     public function process()
     {
         try {

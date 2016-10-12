@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Для управления сайтом необходимо авторизоваться"
+AuthUserFile /home/ralf000/cakes/security/.htpasswd
+Require valid-user
