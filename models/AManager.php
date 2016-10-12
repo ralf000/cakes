@@ -25,7 +25,6 @@ class AManager extends ABase implements ICRUD
 
     public function update(array $values)
     {
-//        $updateQuery = $this->updateQuery(array_keys($values));
         return $this->doStatement(static::$update, array_values($values));
     }
 
