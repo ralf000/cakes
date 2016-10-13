@@ -66,6 +66,7 @@
         filebrowserBrowseUrl: '/extensions/filemanager/dialog.php?akey=xGGEmoHLX2&type=2&editor=ckeditor'
     });
 
+
     function responsive_filemanager_callback(ths) {
         addImage();
     }

@@ -104,7 +104,7 @@ class WorksManager implements ICRUD
             $this->id = $data['id'];
         return $result = [
             'title' => filter_var($data['title'], FILTER_SANITIZE_STRING),
-            'description' => filter_var($data['description'], FILTER_SANITIZE_STRING),
+            'description' => filter_var(Helper::validateHtml($data['description'])),
             'large' => array_map(function ($el) {
                     return $this->filterImg($el);
             }, $this->cleanAndResetArray($data['image'])),

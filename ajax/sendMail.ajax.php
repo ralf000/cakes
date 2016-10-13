@@ -8,8 +8,8 @@
  $email = filter_input(INPUT_GET, 'email', FILTER_SANITIZE_EMAIL);
  $message = filter_input(INPUT_GET, 'message', FILTER_SANITIZE_STRING);
 
- if (!($name || $email || $message))
-     throw new Exception ('Для отправки сообщение недостаточно данных');
+ if (!($name && $email && $message))
+     throw new Exception ('Для отправки сообщения недостаточно данных');
  
  $to = 'marinok_89@mail.ru';
  $subject = 'Сообщение с сайта «тортыизпамперсов.рф»';

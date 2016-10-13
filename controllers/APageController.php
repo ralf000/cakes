@@ -18,7 +18,7 @@ abstract class APageController
      */
     public function __construct()
     {
-        $this->auth();
+//        $this->auth();
     }
 
 

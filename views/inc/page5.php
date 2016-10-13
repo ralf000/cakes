@@ -1,7 +1,7 @@
 <section id="page5" class="section-gray">
     <div class="content">
         <div class="container clearfix">
-            <div class="row">
+            <div class="row" style="margin-top: 40px;">
                 <div class="col-md-12">
                     <h2 class="heading">Новости</h2>
                     <div class="row">

@@ -68,6 +68,14 @@ use components\request\RequestRegistry;
 <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
 <script src="https://cdn.ckeditor.com/4.4.3/standard/ckeditor.js"></script>
 <script src="/js/admin/image_handler.js"></script>
+<script>
+    $(function () {
+        CKEDITOR.replace('description', {
+            height: 300,
+            filebrowserBrowseUrl: '/extensions/filemanager/dialog.php?akey=xGGEmoHLX2&type=2&editor=ckeditor'
+        });
+    });
+</script>
 
 
 

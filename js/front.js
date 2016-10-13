@@ -44,7 +44,7 @@ $(function () {
         moveToFeedBack($(this), e);
     });
     $('.viewnews').on('click', function () {
-        var url = 'helpers/getNews.ajax.php';
+        var url = 'ajax/getNews.ajax.php';
         var id = Number($(this).attr('href'));
         $.getJSON(url, {id: id}, function (data, status, jqXHR) {
             if (status === 'success') {
