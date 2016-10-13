@@ -40,7 +40,7 @@ use controllers\WorksPageController;
         <? (new AboutMePageController())->process(self::INCLUDED_PAGE); ?>
     </div>
     <div id="contacts" class="tab-pane fade">
-        <h1>Обо мне</h1>
+        <h1>Контакты</h1>
         <? (new ContactsPageController())->process(self::INCLUDED_PAGE); ?>
     </div>
 </div>
