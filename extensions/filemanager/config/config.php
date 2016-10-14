@@ -164,7 +164,7 @@ $config = array(
 	//Show or not language selection feature in filemanager
 	'show_language_selection'				=> false,
 	//active or deactive the transliteration (mean convert all strange characters in A..Za..z0..9 characters)
-	'transliteration'						=> false,
+	'transliteration'						=> true,
 	//convert all spaces on files name and folders name with $replace_with variable
 	'convert_spaces'						=> false,
 	//convert all spaces on files name and folders name this value
@@ -197,7 +197,7 @@ $config = array(
 
 	//Automatic resizing //
 	// If you set $image_resizing to TRUE the script converts all uploaded images exactly to image_resizing_width x image_resizing_height dimension
-	// If you set width or height to 0 the script automatically calculates the other dimension
+	// If you set width or height to 0 the script calculates the other dimension
 	// Is possible that if you upload very big images the script not work to overcome this increase the php configuration of memory and time limit
 	'image_resizing'                          => true,
 	'image_resizing_width'                    => 1000,
@@ -321,7 +321,7 @@ $config = array(
 	'fixed_path_from_filemanager'             => array('../../webimg/'), //fixed path of the image folder from the current position on upload folder
 	'fixed_image_creation_name_to_prepend'    => array(), //name to prepend on filename
 	'fixed_image_creation_to_append'          => array(), //name to appendon filename
-	'fixed_image_creation_width'              => array(), //width of image (you can leave empty if you set height)
+	'fixed_image_creation_width'              => array(300), //width of image (you can leave empty if you set height)
 	'fixed_image_creation_height'             => array(200), //height of image (you can leave empty if you set width)
 	/*
 	#             $option:     0 / exact = defined size;
