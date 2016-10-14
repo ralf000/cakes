@@ -109,7 +109,7 @@ class WorksManager implements ICRUD
                     return $this->filterImg($el);
             }, $this->cleanAndResetArray($data['image'])),
             'thumbnail' => array_map(function ($el) {
-                    return str_replace('img', 'img/thumbs', $this->filterImg($el));
+                    return str_replace('img', 'img/../webimg', $this->filterImg($el));
             }, $this->cleanAndResetArray($data['image'])),
         ];
     }

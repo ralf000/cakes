@@ -139,7 +139,7 @@ $config = array(
 	| default language file name
 	|--------------------------------------------------------------------------
 	*/
-	'default_language' => "en_EN",
+	'default_language' => "ru",
 
 	/*
 	|--------------------------------------------------------------------------
@@ -199,11 +199,11 @@ $config = array(
 	// If you set $image_resizing to TRUE the script converts all uploaded images exactly to image_resizing_width x image_resizing_height dimension
 	// If you set width or height to 0 the script automatically calculates the other dimension
 	// Is possible that if you upload very big images the script not work to overcome this increase the php configuration of memory and time limit
-	'image_resizing'                          => false,
-	'image_resizing_width'                    => 0,
+	'image_resizing'                          => true,
+	'image_resizing_width'                    => 1000,
 	'image_resizing_height'                   => 0,
 	'image_resizing_mode'                     => 'auto', // same as $image_max_mode
-	'image_resizing_override'                 => false,
+	'image_resizing_override'                 => true,
 	// If set to TRUE then you can specify bigger images than $image_max_width & height otherwise if image_resizing is
 	// bigger than $image_max_width or height then it will be converted to those values
 
@@ -317,12 +317,12 @@ $config = array(
 	// path_from_filemanager/test/test1/
 	// PS if there isn't write permission in your destination folder you must set it
 	//
-	'fixed_image_creation'                    => false, //activate or not the creation of one or more image resized with fixed path from filemanager folder
-	'fixed_path_from_filemanager'             => array( '../test/', '../test1/' ), //fixed path of the image folder from the current position on upload folder
-	'fixed_image_creation_name_to_prepend'    => array( '', 'test_' ), //name to prepend on filename
-	'fixed_image_creation_to_append'          => array( '_test', '' ), //name to appendon filename
-	'fixed_image_creation_width'              => array( 300, 400 ), //width of image (you can leave empty if you set height)
-	'fixed_image_creation_height'             => array( 200, '' ), //height of image (you can leave empty if you set width)
+	'fixed_image_creation'                    => true, //activate or not the creation of one or more image resized with fixed path from filemanager folder
+	'fixed_path_from_filemanager'             => array('../../webimg/'), //fixed path of the image folder from the current position on upload folder
+	'fixed_image_creation_name_to_prepend'    => array(), //name to prepend on filename
+	'fixed_image_creation_to_append'          => array(), //name to appendon filename
+	'fixed_image_creation_width'              => array(), //width of image (you can leave empty if you set height)
+	'fixed_image_creation_height'             => array(200), //height of image (you can leave empty if you set width)
 	/*
 	#             $option:     0 / exact = defined size;
 	#                          1 / portrait = keep aspect set height;
@@ -330,7 +330,7 @@ $config = array(
 	#                          3 / auto = auto;
 	#                          4 / crop= resize and crop;
 	*/
-	'fixed_image_creation_option'             => array( 'crop', 'auto' ), //set the type of the crop
+	'fixed_image_creation_option'             => array('auto'), //set the type of the crop
 
 
 	// New image resized creation with relative path inside to upload folder after uploading (thumbnails in relative mode)
@@ -339,11 +339,11 @@ $config = array(
 	// The image creation path is always relative so if i'm inside source/test/test1 and I upload an image, the path start from here
 	//
 	'relative_image_creation'                 => false, //activate or not the creation of one or more image resized with relative path from upload folder
-	'relative_path_from_current_pos'          => array( './', './' ), //relative path of the image folder from the current position on upload folder
-	'relative_image_creation_name_to_prepend' => array( '', '' ), //name to prepend on filename
-	'relative_image_creation_name_to_append'  => array( '_thumb', '_thumb1' ), //name to append on filename
-	'relative_image_creation_width'           => array( 300, 400 ), //width of image (you can leave empty if you set height)
-	'relative_image_creation_height'          => array( 200, '' ), //height of image (you can leave empty if you set width)
+	'relative_path_from_current_pos'          => array('/img/web/'), //relative path of the image folder from the current position on upload folder
+	'relative_image_creation_name_to_prepend' => array(), //name to prepend on filename
+	'relative_image_creation_name_to_append'  => array(), //name to append on filename
+	'relative_image_creation_width'           => array(400), //width of image (you can leave empty if you set height)
+	'relative_image_creation_height'          => array(200), //height of image (you can leave empty if you set width)
 	/*
 	#             $option:     0 / exact = defined size;
 	#                          1 / portrait = keep aspect set height;
