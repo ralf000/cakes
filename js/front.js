@@ -25,8 +25,23 @@ function moveToFeedBack(t, e) {
     }
 }
 
+function initOnePagePagination(){
+    var menu = [
+        'Главная',
+        'Мои работы',
+        'Обо мне',
+        'Отзывы',
+        'Новости',
+        'Контакты'
+    ];
+    $.each($('ul.onepage-pagination li a'), function (idx, el) {
+        $(this).append('<span>'+menu[idx]+'</span>');
+    });
+}
+
 
 $(function () {
+
     $('a#down').on('click', function (e) {
         e.preventDefault();
         $(this).moveTo(2);
@@ -128,7 +143,7 @@ $(function () {
     onepage();
     utils();
     demo();
-
+    initOnePagePagination();
 });
 
 /* for demo purpose only - can be deleted */
