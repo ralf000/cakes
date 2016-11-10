@@ -19,7 +19,7 @@
                             <h4 class="modal-title" id="myModalLabel">Файловый менеджер</h4>
                         </div>
                         <div class="modal-body">
-                            <iframe src="/extensions/filemanager/dialog.php?akey=xGGEmoHLX2&type=1&field_id=image1"
+                            <iframe src="/extensions/filemanager/dialog.php?akey=xGGEmoHLX2&type=1&field_id=image1image_resizing_width=1920"
                                     style="width: 100%; height: 70vh" frameborder="0" allowtransparency="true"></iframe>
                         </div>
                         <div class="modal-footer">

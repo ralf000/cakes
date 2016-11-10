@@ -4,6 +4,9 @@ if (session_id() == '') session_start();
 mb_internal_encoding('UTF-8');
 date_default_timezone_set('Europe/Moscow');
 
+if (!isset($_SESSION['image_resizing_width']) && filter_has_var(INPUT_GET, 'image_resizing_width')) {
+    $_SESSION['image_resizing_width'] = filter_input(INPUT_GET, 'image_resizing_width', FILTER_SANITIZE_NUMBER_INT);
+}
 /*
 |--------------------------------------------------------------------------
 | Optional security
@@ -200,7 +203,7 @@ $config = array(
     // If you set width or height to 0 the script calculates the other dimension
     // Is possible that if you upload very big images the script not work to overcome this increase the php configuration of memory and time limit
     'image_resizing' => true,
-    'image_resizing_width' => 1000,
+    'image_resizing_width' => isset($_SESSION['image_resizing_width']) ? abs((int)$_SESSION['image_resizing_width']) : 1000,
     'image_resizing_height' => 0,
     'image_resizing_mode' => 'auto', // same as $image_max_mode
     'image_resizing_override' => true,
