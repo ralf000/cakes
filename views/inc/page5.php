@@ -14,8 +14,8 @@
                                             <div class="wrapper_body">
                                                 <div class="cbm_wrap ">
                                                     <h1><?= $n['title'] ?></h1>
-                                                    <small>
-                                                        Добавлено: <?= date('H:i:s d-m-Y', strtotime($n['created_time'])) ?></small>
+<!--                                                    <small>-->
+<!--                                                        Добавлено: --><?//= date('H:i:s d-m-Y', strtotime($n['created_time'])) ?><!--</small>-->
                                                     <? if (isset($n['image']) && !empty($n['image'])): ?>
                                                         <div class="newsImg">
                                                             <a class="fancybox" href="<?= $n['image'] ?>"><img

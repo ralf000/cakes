@@ -6,7 +6,7 @@
                 <h4 class="modal-title" id="viewtitle"></h4>
             </div>
             <div class="modal-body" id="viewbody">
-                <div id="date"></div>
+<!--                <div id="date"></div>-->
                 <div id="viewimage"></div>
                 <div id="viewcontent"></div>
             </div>
