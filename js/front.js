@@ -72,7 +72,7 @@ $(function () {
                 image.empty();
                 content.empty();
                 body.children('#date').append('<small>Добавлено: ' + data.created_time + '</small>');
-                (data.image.length > 0) ? body.children('#viewimage').append('<a class="fancybox" href="' + data.image + '"><img src="' + data.image + '" alt="' + data.title + '" style="max-height: 350px" class="img-responsive"/></a>') : false;
+                (data.image.length > 0) ? body.children('#viewimage').append('<a class="fancybox" href="' + data.image + '"><img src="' + data.image + '" alt="' + data.title + '" style="max-height: 250px" class="img-responsive"/></a>') : false;
                 //(data.description.length > 0) ? body.children('#viewcontent').append('<p>' + data.description + '</p>') : false;
                 body.children('#viewcontent').append(data.body);
             }
@@ -101,7 +101,10 @@ $(function () {
         });
     });
 
-    $('.bxslider').bxSlider();
+    $('.bxslider').bxSlider({
+        adaptiveHeight: true,
+        mode: 'horizontal'
+    });
     $('.fancybox').fancybox();
     if ($(window).width() < 1000) {
         $('ul.cb-slideshow').empty();

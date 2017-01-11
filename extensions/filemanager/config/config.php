@@ -134,7 +134,7 @@ $config = array(
     | in Megabytes
     |
     */
-    'MaxSizeUpload' => 1,
+    'MaxSizeUpload' => 10,
 
 
     /*
