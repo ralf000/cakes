@@ -20,7 +20,7 @@
         sectionContainer: "section",
         easing: "ease",
         animationTime: 1000,
-        pagination: true,
+        pagination: false,
         updateURL: false,
         keyboard: true,
         beforeMove: null,

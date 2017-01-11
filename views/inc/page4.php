@@ -11,11 +11,11 @@
                                     <? if ($key % 2 === 0) echo '<li>'; ?>
                                     <div class="row" style="padding: 10px;">
                                         <div class="rev">
-                                            <div class="col-md-8">
+                                            <div class="col-md-9">
                                                 <p class="lead"><b><?= $review['name'] ?></b></p>
                                                 <?= $review['review'] ?>
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-md-3">
                                                 <a class="fancybox" href="<?= $review['image'] ?>"><img
                                                         src="<?= $review['image'] ?>"
                                                         alt="Отзыв в торте из памперсов в Зеленограде"/></a>

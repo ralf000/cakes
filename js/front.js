@@ -101,7 +101,10 @@ $(function () {
         });
     });
 
-    $('.bxslider').bxSlider();
+    $('.bxslider').bxSlider({
+        adaptiveHeight: true,
+        mode: 'horizontal'
+    });
     $('.fancybox').fancybox();
     if ($(window).width() < 1000) {
         $('ul.cb-slideshow').empty();

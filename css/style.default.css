@@ -73,6 +73,7 @@ h4.heading:after {
     margin-bottom: 30px;
 }
 .content {
+    /*padding-top: 20px;*/
     position: relative;
     width: 100%;
     top: 50%;
@@ -853,8 +854,13 @@ h3,
     margin-top: 0;
     margin-bottom: 22px;
 }
-p {
+p, #page6 li {
     margin: 0 0 22px;
+    font-size: 16px;
+}
+
+#page5 p{
+    font-size: 14px;
 }
 .lead {
     margin-bottom: 22px;
@@ -995,7 +1001,7 @@ a#down{
     /*padding: 20px 0;*/
     /*height: 100%;*/
     /*width: 100%;*/
-    background-image:url(http://subtlepatterns.com/patterns/egg_shell.png);
+    /*background-image:url(http://subtlepatterns.com/patterns/egg_shell.png);*/
     /*    font-size: 11px;
         font-family: 'Open Sans', sans-serif;*/
     color: #4A4A4A ;
