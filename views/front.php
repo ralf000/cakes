@@ -67,12 +67,12 @@
 <!--контент для страницы "мои работы"-->
 <script src="js/cakes.js"></script>
 <!--showflakes-->
-<script src="/js/jquery.snow.min.1.0.js"></script>
+<!--<script src="/js/jquery.snow.min.1.0.js"></script>
 <script>
     $(function () {
         $.fn.snow({ minSize: 20, maxSize: 50, newOn: 1000, flakeColor: '#0099FF' });
     });
-</script>
+</script>-->
 <noscript>
     <div><img src="https://mc.yandex.ru/watch/37964860" style="position:absolute; left:-9999px;" alt=""/></div>
 </noscript>
