@@ -1129,7 +1129,7 @@ nav#porfolio-nav li:last-child a {
 
 @media (max-width: 1280px) {
     .og-grid li > a, .og-grid li > a img {
-        width: 250px;
+        /*width: 250px;*/
     }
 
     @media (max-width: 980px) {
