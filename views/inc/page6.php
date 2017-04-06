@@ -4,7 +4,7 @@
         <div class="container clearfix">
             <div class="row">
                 <div class="col-md-12">
-                    <h2 class="heading"><?= $this->contacts['title']?></h2>
+                    <h2 class="heading"><?= $this->contacts['title'] ?></h2>
                     <div class="row">
                         <div class="col-md-6">
                             <form id="contact-form" class="contact-form">
@@ -37,7 +37,7 @@
                             </form>
                         </div>
                         <div class="col-md-6">
-                            <?= $this->contacts['text']?>
+                            <?= $this->contacts['text'] ?>
                         </div>
                     </div>
                     <div class="row">
@@ -49,7 +49,7 @@
                                             class="fa fa-fw fa-vk"></i> Вконтакте</a>
                                 </div>
                                 <div class="col-md-4">
-                                    <a target="_blank" href="http://ok.ru/group/52891297775839" title="Одноклассники"><i
+                                    <a target="_blank" href="https://ok.ru/profile/35169748959" title="Одноклассники"><i
                                             class="fa fa-fw fa-odnoklassniki"></i> Одноклассники</a>
                                 </div>
                                 <div class="col-md-4">
